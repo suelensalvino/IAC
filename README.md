@@ -14,3 +14,4 @@ Feito com :heart: por:
 * [Kallyanne Vitória](https://github.com/KallyVSS) 
 * [Suelen Salvino](https://github.com/suelensalvino)
 * [Victor Guilherme](https://github.com/Vict0r-Gu1lherme)
+* [Thayally Andrade](https://github.com/ThayallyAn)
