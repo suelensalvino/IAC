@@ -15,3 +15,9 @@ Feito com :heart: por:
 * [Suelen Salvino](https://github.com/suelensalvino)
 * [Victor Guilherme](https://github.com/Vict0r-Gu1lherme)
 * [Thayally Andrade](https://github.com/ThayallyAn)
+
+## Tecnologias
+* PHP
+* CSS
+* JS
+* Svelte
