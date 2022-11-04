@@ -26,13 +26,13 @@
       </header>
 
       <Route path="/">
-        <SignUp />
-      </Route>
-      <Route path="SignUp">
-        <SignUp />
+        <SignIn />
       </Route>
       <Route path="SignIn">
         <SignIn />
+      </Route>
+      <Route path="SignUp">
+        <SignUp />
       </Route>
     </div>
   </main>
