@@ -35,7 +35,7 @@
   >
     <Link class="hover:text-gray-400" to="/">Esqueceu sua senha?</Link>
     <Link class="hover:text-gray-400" to="/SignUp"
-      >Já possui uma conta? Entre aqui!</Link
+      >Não possui uma conta? Cadastre-se!</Link
     >
   </footer>
 </Router>
