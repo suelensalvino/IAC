@@ -5,7 +5,7 @@
 </script>
 
 <Router path="SignUp">
-  <form class="flex flex-col gap-2 w-full mt-8">
+  <form class="flex flex-col gap-2 w-full mt-8" method="post">
     <div class="flex flex-col w-full gap-1">
       <label for="user" class="text-gray-100">Insira seu Nome</label>
       <input
@@ -32,6 +32,15 @@
         type="text"
         maxlength="14"
         placeholder="0000TSIIG0000"
+        required
+        class="py-3 px-4 rounded bg-gray-900 text-white placeholder:text-gray-700"
+      />
+    </div>
+    <div class="flex flex-col w-full gap-1">
+      <label for="user" class="text-gray-100">Qual o nome do seu primeiro animal de estimação?</label>
+      <input
+        type="text"
+        placeholder="Nome do animal"
         required
         class="py-3 px-4 rounded bg-gray-900 text-white placeholder:text-gray-700"
       />
