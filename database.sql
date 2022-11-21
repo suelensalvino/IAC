@@ -8,19 +8,19 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema IAC
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema IAC
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `IAC` DEFAULT CHARACTER SET utf8 ;
+USE `IAC` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`ALUNO`
+-- Table `IAC`.`ALUNO`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`ALUNO` (
+CREATE TABLE IF NOT EXISTS `IAC`.`ALUNO` (
   `ALU_MATRICULA` INT NOT NULL AUTO_INCREMENT,
   `ALU_NOME` VARCHAR(45) NULL,
   `ALU_SENHA` VARCHAR(45) NULL,
@@ -30,9 +30,9 @@ CREATE TABLE IF NOT EXISTS `mydb`.`ALUNO` (
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`BIOMETRIA`
+-- Table `IAC`.`BIOMETRIA`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`BIOMETRIA` (
+CREATE TABLE IF NOT EXISTS `IAC`.`BIOMETRIA` (
   `BIO_CODIGO` INT NOT NULL AUTO_INCREMENT,
   `BIO_DIGITAL` VARCHAR(45) NULL,
   `ALUNO_ALU_MATRICULA` INT NOT NULL,
@@ -40,24 +40,24 @@ CREATE TABLE IF NOT EXISTS `mydb`.`BIOMETRIA` (
   INDEX `fk_BIOMETRIA_ALUNO_idx` (`ALUNO_ALU_MATRICULA` ASC) VISIBLE,
   CONSTRAINT `fk_BIOMETRIA_ALUNO`
     FOREIGN KEY (`ALUNO_ALU_MATRICULA`)
-    REFERENCES `mydb`.`ALUNO` (`ALU_MATRICULA`)
+    REFERENCES `IAC`.`ALUNO` (`ALU_MATRICULA`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`TIPO`
+-- Table `IAC`.`TIPO`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`TIPO` (
+CREATE TABLE IF NOT EXISTS `IAC`.`TIPO` (
   `TIP_CODIGO` INT NOT NULL AUTO_INCREMENT,
   `TIP_DESCRICAO` VARCHAR(45) NULL,
   PRIMARY KEY (`TIP_CODIGO`));
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`EVENTO`
+-- Table `IAC`.`EVENTO`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`EVENTO` (
+CREATE TABLE IF NOT EXISTS `IAC`.`EVENTO` (
   `EVE_CODIGO` INT NOT NULL AUTO_INCREMENT,
   `BIOMETRIA_BIO_CODIGO` INT NOT NULL,
   `BIOMETRIA_ALUNO_ALU_MATRICULA` INT NOT NULL,
@@ -67,12 +67,12 @@ CREATE TABLE IF NOT EXISTS `mydb`.`EVENTO` (
   INDEX `fk_EVENTO_TIPO1_idx` (`TIPO_TIP_CODIGO` ASC) VISIBLE,
   CONSTRAINT `fk_EVENTO_BIOMETRIA1`
     FOREIGN KEY (`BIOMETRIA_BIO_CODIGO` , `BIOMETRIA_ALUNO_ALU_MATRICULA`)
-    REFERENCES `mydb`.`BIOMETRIA` (`BIO_CODIGO` , `ALUNO_ALU_MATRICULA`)
+    REFERENCES `IAC`.`BIOMETRIA` (`BIO_CODIGO` , `ALUNO_ALU_MATRICULA`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_EVENTO_TIPO1`
     FOREIGN KEY (`TIPO_TIP_CODIGO`)
-    REFERENCES `mydb`.`TIPO` (`TIP_CODIGO`)
+    REFERENCES `IAC`.`TIPO` (`TIP_CODIGO`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
 
