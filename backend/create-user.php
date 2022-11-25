@@ -12,12 +12,12 @@ if(!isset($_POST['senha'])){err('Preencha sua senha', __LINE__);}
 require_once(__DIR__.'/db/database.php');
 
 try{
-    $q = $pdo->prepare('INSERT INTO ALUNO VALUES (:nome, :email, :matricula, :resposta, :senha)');
-    $q->bindValue(':nome', $_POST['ALU_NOME']);
-    $q->bindValue(':email', $_POST['ALU_EMAIL']);
-    $q->bindValue(':matricula', $_POST['ALU_MATRICULA']);
-    $q->bindValue(':resposta', $_POST['ALU_RESPOSTA']);
-    $q->bindValue(':senha', $_POST['ALU_SENHA']);
+    $q = $pdo->prepare('INSERT INTO ALUNO VALUES (null, :nome, :email, :matricula, :resposta, :senha)');
+    $q->bindValue(':nome', $_POST['nome']);
+    $q->bindValue(':email', $_POST['email']);
+    $q->bindValue(':matricula', $_POST['matricula']);
+    $q->bindValue(':resposta', $_POST['resposta']);
+    $q->bindValue(':senha', $_POST['senha']);
     $q->execute();
     $userId = $pdo->lastInsertId();
 }catch(PDOException $ex){
