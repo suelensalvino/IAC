@@ -1,6 +1,7 @@
 <script>
   import { Router, Route, Link } from "svelte-navigator";
   import Button from "../components/Button.svelte";
+    import ButtonSignIn from "../components/ButtonSignIn.svelte";
 </script>
 
 <Router path="SignIn">
@@ -27,7 +28,7 @@
         class="py-3 px-4 rounded bg-gray-900 text-white placeholder:text-gray-700"
       />
     </div>
-    <Button />
+    <ButtonSignIn />
   </form>
 
   <footer
