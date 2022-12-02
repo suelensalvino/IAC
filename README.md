@@ -10,10 +10,8 @@ Feito com :heart: por:
 
 * [Bernardo Filipe](https://github.com/BernardoFOFG)
 * [Cecília Carol](https://github.com/CeciliaCarol)
-* [Isabela Alves](https://github.com/belinha18)
-* [Kallyanne Vitória](https://github.com/KallyVSS) 
+* [Isabela Alves](https://github.com/Isabela-Alves)
 * [Suelen Salvino](https://github.com/suelensalvino)
-* [Victor Guilherme](https://github.com/Vict0r-Gu1lherme)
 * [Thayally Andrade](https://github.com/ThayallyAn)
 
 ## Tecnologias
