@@ -1,5 +1,4 @@
 <script>
-<<<<<<< HEAD
   // @ts-nocheck
 
   import { Router, Link } from "svelte-navigator";
