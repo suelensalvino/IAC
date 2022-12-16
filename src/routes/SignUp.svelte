@@ -22,7 +22,11 @@
 </script>
 
 <Router path="SignUp">
+<<<<<<< HEAD
   <form class="flex flex-col gap-2 mx-w-full mt-6" method="post" on:submit|preventDefault={createUser}>
+=======
+  <form class="flex flex-col gap-2 w-full mt-8" method="post" on:submit|preventDefault={createUser}>
+>>>>>>> fd04ba14e16517ea1ba8037a4806dc4456fca9d3
     <div class="flex flex-col w-full gap-1">
       <label for="user" class="text-gray-100">Insira seu nome</label>
       <input
@@ -85,7 +89,11 @@
         class="py-3 px-4 rounded bg-gray-900 text-white placeholder:text-gray-700"
       />
     </div>
+<<<<<<< HEAD
     <Button><span slot="button-child">Cadastre-se no sistema</span></Button>
+=======
+    <Button />
+>>>>>>> fd04ba14e16517ea1ba8037a4806dc4456fca9d3
   </form>
 
   <footer
