@@ -1,6 +1,8 @@
 <script>
+// @ts-nocheck
+
   import Button from "../components/Button.svelte";
-  import { Router, Route, Link } from "svelte-navigator";
+  import { Router, Link } from "svelte-navigator";
 
   export let user = {};
 
@@ -20,15 +22,15 @@
 </script>
 
 <Router path="SignUp">
-  <form class="flex flex-col gap-2 w-full mt-8" method="post">
+  <form class="flex flex-col gap-2 mx-w-full mt-6" method="post" on:submit|preventDefault={createUser}>
     <div class="flex flex-col w-full gap-1">
       <label for="user" class="text-gray-100">Insira seu nome</label>
       <input
         type="text"
-        id="nome"
+        name="nome"
         placeholder="Seu nome"
         required
-        bind:value={user.name}
+        bind:value={user.nome}
         class="py-3 px-4 rounded bg-gray-900 text-white placeholder:text-gray-700"
       />
     </div>
@@ -38,7 +40,7 @@
       >
       <input
         type="email"
-        id="email"
+        name="email"
         placeholder="aluno@ifpe.edu.br.com"
         required
         bind:value={user.email}
@@ -49,7 +51,7 @@
       <label for="user" class="text-gray-100">Insira sua matrícula</label>
       <input
         type="text"
-        id="matricula"
+        name="matricula"
         maxlength="14"
         placeholder="0000TSIIG0000"
         required
@@ -63,7 +65,7 @@
       >
       <input
         type="text"
-        id="resposta"
+        name="resposta"
         placeholder="Nome do animal"
         required
         bind:value={user.resposta}
@@ -74,7 +76,7 @@
       <label for="user" class="text-gray-100">Insira sua senha</label>
       <input
         type="password"
-        id="senha"
+        name="senha"
         minlength="8"
         maxlength="20"
         placeholder="*************"
@@ -83,13 +85,13 @@
         class="py-3 px-4 rounded bg-gray-900 text-white placeholder:text-gray-700"
       />
     </div>
-    <button on:click={createUser}>Cadastre-se</button>
+    <Button><span slot="button-child">Cadastre-se no sistema</span></Button>
   </form>
 
   <footer
-    class="w-full mt-[35px] text-center flex flex-col text-gray-500  underline"
+    class="w-full mt-[20px] text-center flex flex-col text-gray-500 underline"
   >
-    <Link class="hover:text-gray-400" to="/">Esqueceu sua senha?</Link>
+    <Link class="hover:text-gray-400" to="/Forget">Esqueceu sua senha?</Link>
     <Link class="hover:text-gray-400" to="/SignIn"
       >Já possui uma conta? Entre aqui!</Link
     >
