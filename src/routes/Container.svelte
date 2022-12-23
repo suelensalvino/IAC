@@ -2,7 +2,8 @@
     // @ts-nocheck
     import SignUp from "./SignUp.svelte";
     import SignIn from "./SignIn.svelte";
-    import Forget from './Forget.svelte'
+    import Forget from './Forget.svelte';
+    import Home from "./Home.svelte";
     import LogoIFPE from "../assets/img/Logo_IFPE.svg";
     import LogoIAC from "../assets/img/Logo_IAC.svg";
 
@@ -36,6 +37,9 @@
         </Route>
         <Route path="Forget">
             <Forget/>
+        </Route>
+        <Route path="Home">
+            <Home/>
         </Route>
     </Router>
 </div>
