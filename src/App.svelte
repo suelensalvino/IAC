@@ -1,8 +1,23 @@
 <script>
-  // @ts-nocheck
-  import Container from "./routes/Container.svelte";
+  import { currentPage, isLogged } from "./data-users";
+  import Index from "./routes/Index.svelte";
+  import Navbar from "./Navbar.svelte";
+  import SignIn from "./routes/SignIn.svelte";
+  import SignUp from "./routes/SignUp.svelte";
+  import Home from "./routes/Home.svelte";
 </script>
 
 <main class="bg-gray-800 h-screen flex">
-  <Container/>
+  <Navbar />
+
+  {#if $currentPage == 'index'}
+    <Index />
+  {:else if $currentPage == 'register'}
+    <SignUp />
+  {:else if $currentPage == 'login'}
+  <SignIn />
+  {:else if $currentPage == 'home'}
+  <Home />
+  {/if}
+
 </main>
