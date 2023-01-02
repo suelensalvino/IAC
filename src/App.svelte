@@ -1,7 +1,7 @@
 <script>
   import { currentPage, isLogged } from "./data-users";
   import Index from "./routes/Index.svelte";
-  import Navbar from "./Navbar.svelte";
+  import Navbar from "./routes/Navbar.svelte";
   import SignIn from "./routes/SignIn.svelte";
   import SignUp from "./routes/SignUp.svelte";
   import Home from "./routes/Home.svelte";
