@@ -28,7 +28,7 @@
 </script>
 
 <form
-class="flex flex-col gap-2 w-full mt-8"
+class="flex flex-col gap-2 w-[500px] mt-8"
 on:submit|preventDefault={validateLogin}
 >
 <div class="flex flex-col w-full gap-1">
@@ -56,12 +56,3 @@ on:submit|preventDefault={validateLogin}
 </div>
 <Button><span slot="button-child">Entrar no sistema</span></Button>
 </form>
-
-<footer
-class="w-full mt-[35px] text-center flex flex-col text-gray-500  underline"
->
-<a class="hover:text-gray-400" href="/Forget">Esqueceu sua senha?</a>
-<a class="hover:text-gray-400" href="/SignUp"
->Não possui uma conta? Cadastre-se!</a
->
-</footer>

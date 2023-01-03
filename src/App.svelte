@@ -1,23 +1,24 @@
 <script>
   import { currentPage, isLogged } from "./data-users";
-  import Index from "./routes/Index.svelte";
+  import Header from "./routes/Header.svelte";
   import Navbar from "./routes/Navbar.svelte";
   import SignIn from "./routes/SignIn.svelte";
   import SignUp from "./routes/SignUp.svelte";
-  import Home from "./routes/Home.svelte";
+  import Forget from './routes/Forget.svelte'
 </script>
 
-<main class="bg-gray-800 h-screen flex">
-  <Navbar />
+<main class="bg-gray-800 h-full flex flex-col justify-center items-center">
+<Header/>
+<Navbar />
+    {#if $currentPage == "index"}
+      <SignIn />
+    {:else if $currentPage == "register"}
+      <SignUp />
+    {:else if $currentPage == "login"}
+      <SignIn />
+    {:else if $currentPage == "forget"}
+      <Forget />
+    {/if}
 
-  {#if $currentPage == 'index'}
-    <Index />
-  {:else if $currentPage == 'register'}
-    <SignUp />
-  {:else if $currentPage == 'login'}
-  <SignIn />
-  {:else if $currentPage == 'home'}
-  <Home />
-  {/if}
 
 </main>

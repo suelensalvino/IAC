@@ -24,7 +24,7 @@
 }
 </script>
 
-<form class="flex flex-col gap-2 mx-w-full mt-6" on:submit|preventDefault={createUser}>
+<form class="flex flex-col gap-2 mx-w-[500px] mt-6" on:submit|preventDefault={createUser}>
   <div class="flex flex-col w-full gap-1">
       <label for="user" class="text-gray-100">Insira seu nome</label>
       <input 
@@ -93,7 +93,7 @@
       placeholder="*************"
       required
       bind:value={confSenha}
-      class="py-3 px-4 rounded bg-gray-900 text-white placeholder:text-gray-700"
+      class="py-3 px-4 mb-2 rounded bg-gray-900 text-white placeholder:text-gray-700"
       />
   </div>
   {#if senha != '' && senha != confSenha}
@@ -101,11 +101,3 @@
   {/if}
   <Button><span slot="button-child">Cadastre-se no sistema</span></Button>
 </form>
-<footer
-class="w-full mt-[20px] text-center flex flex-col text-gray-500 underline"
->
-<a class="hover:text-gray-400" href="/Forget">Esqueceu sua senha?</a>
-<a class="hover:text-gray-400" href="/SignIn"
->Já possui uma conta? Entre aqui!</a
->
-</footer>

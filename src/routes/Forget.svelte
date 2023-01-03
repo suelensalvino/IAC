@@ -2,7 +2,7 @@
 <script>
   // @ts-nocheck
   import Button from "../components/Button.svelte";
-  import { Router, Link } from "svelte-navigator";
+  import { Link } from "svelte-navigator";
 
   export let user = {};
   const emailVerify = async () => {
@@ -18,7 +18,7 @@
 
 <!-- HTML -->
 <form
-  class="flex flex-col gap-2 w-full mt-8"
+  class="flex flex-col gap-2 w-[500px] mt-8"
   on:submit|preventDefault={emailVerify}
   method="get"
 >
@@ -39,14 +39,5 @@
       instruções!
     </p>
   </div>
-  <footer
-    class="w-full mt-[35px] text-center flex flex-col text-gray-500  underline"
-  >
-    <Link class="hover:text-gray-400" to="/SignIn"
-      >Já possui uma conta? Entre aqui!</Link
-    >
-    <Link class="hover:text-gray-400" to="/SignUp"
-      >Não possui uma conta? Cadastre-se!</Link
-    >
-  </footer>
+ 
 </form>

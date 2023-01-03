@@ -1,32 +1,44 @@
 <script>
-    import { currentPage, isLogged } from "../data-users";
+  import { currentPage, isLogged } from "../data-users";
 
-    function logout() {
+  function logout() {
     fetch("http://localhost:8000/logout.php", {
       credentials: "include",
     });
     $isLogged = false;
-    $currentPage = 'index';
+    $currentPage = "index";
   }
 </script>
-<button on:click={() => ($currentPage = "index")}>Início</button>
 
-{#if !$isLogged}
-    <button 
-    on:click={() => ($currentPage = "register")}> 
-    Cadastre-se
+<div class="flex gap-4 justify-center text-white font-semibold">
+  <button
+    class="bg-green-800 py-3 px-4 rounded hover:bg-green-900 transition-all"
+    on:click={() => ($currentPage = "login")}>Início</button
+  >
+
+  {#if !$isLogged}
+    <button
+      class="bg-green-800 py-3 px-4 rounded hover:bg-green-900 transition-all"
+      on:click={() => ($currentPage = "register")}
+    >
+      Cadastre-se
     </button>
-    <button 
-    on:click={() => ($currentPage = "login")}> 
-    Entrar
+    <button
+      class="bg-green-800 py-3 px-4 rounded hover:bg-green-900 transition-all"
+      on:click={() => ($currentPage = "forget")}>Esqueci a senha</button
+    >
+  {:else}
+    <button
+      class="bg-green-800 py-3 px-4 rounded hover:bg-green-900 transition-all"
+      on:click={() => ($currentPage = "home")}
+    >
+      Home
     </button>
-{:else}
-    <button 
-    on:click={() => ($currentPage = "home")}> 
-    Home
+    <button
+      class="bg-green-800 py-3 px-4 rounded hover:bg-green-900 transition-all"
+      on:click={logout}
+    >
+      Sair
     </button>
-    <button 
-    on:click={logout}> 
-    Sair 
-    </button>
-{/if}
+  {/if}
+</div>
