@@ -1,16 +1,19 @@
 <script>
-  import { currentPage } from "./data-users";
-  import Header from "./routes/Header.svelte";
+  import { currentPage, isLogged } from "./data-users";
+  import Header from "./components/Header.svelte";
   import Navbar from "./routes/Navbar.svelte";
   import SignIn from "./routes/SignIn.svelte";
   import SignUp from "./routes/SignUp.svelte";
-  import Forget from './routes/Forget.svelte'
+  import Forget from "./routes/Forget.svelte";
   import Horarios from "./routes/Horarios.svelte";
+  import Dashboard from "./routes/Dashboard.svelte";
 </script>
 
 <main class="bg-gray-800 h-full flex flex-col justify-center items-center">
-<Header/>
-<Navbar />
+  {#if !$isLogged == true}
+    <Header />
+    <Navbar />
+
     {#if $currentPage == "index"}
       <SignIn />
     {:else if $currentPage == "register"}
@@ -19,9 +22,10 @@
       <SignIn />
     {:else if $currentPage == "forget"}
       <Forget />
-    {:else if $currentPage == "home"}
-      <Horarios />
     {/if}
-
-
+  {:else if $currentPage == "home"}
+    <Horarios />
+  {:else if $currentPage == "dashboard"}
+    <Dashboard />
+  {/if}
 </main>
