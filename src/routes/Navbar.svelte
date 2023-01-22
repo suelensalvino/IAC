@@ -1,13 +1,12 @@
 <script>
   import { currentPage, isLogged } from "../data-users";
 
-  export function logout() {
+  function logout() {
     fetch("http://localhost:8000/logout.php", {
       credentials: "include",
     });
     $isLogged = false;
     $currentPage = "index";
-    sessionStorage.clear();
   }
 </script>
 
