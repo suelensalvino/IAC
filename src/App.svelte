@@ -5,7 +5,6 @@
   import SignIn from "./routes/SignIn.svelte";
   import SignUp from "./routes/SignUp.svelte";
   import Forget from "./routes/Forget.svelte";
-  import Horarios from "./routes/Horarios.svelte";
   import Dashboard from "./routes/Dashboard.svelte";
 </script>
 
@@ -23,8 +22,6 @@
     {:else if $currentPage == "forget"}
       <Forget />
     {/if}
-  {:else if $currentPage == "home"}
-    <Horarios />
   {:else if $currentPage == "dashboard"}
     <Dashboard />
   {/if}
