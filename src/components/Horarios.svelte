@@ -1,9 +1,7 @@
 <script>
   // @ts-nocheck
 
-  import { onMount } from "svelte";
   import Button from "./Button.svelte";
-  let horarios = [];
   let data = "";
   let entrada = "";
   let saida = "";
@@ -17,22 +15,6 @@
   dataCompletaMax.push(ano, mes, dia);
   let dataCompletaMin = [];
   dataCompletaMin.push(ano, mes, diaMin);
-
-  async function load() {
-    const response = await fetch("http://localhost:8000/get-registro.php", {
-      credentials: "include",
-    });
-
-    if (!response.ok) {
-      alert("Você não está logado!");
-      return;
-    }
-
-    horarios = await response.json();
-  }
-  onMount(() => {
-    load();
-  });
 
   function correcaoData() {
     dataCompletaMax = dataCompletaMax.toString().replace(/,/g, "-");
@@ -59,7 +41,6 @@
     data = "";
     entrada = "";
     saida = "";
-    load();
   }
 </script>
 
@@ -98,6 +79,4 @@
   </div>
 </form>
 
-{#each horarios as horario}
-  <div>{horario.TIP_DATA} {horario.TIP_ENTRADA} {horario.TIP_SAIDA}</div>
-{/each}
+
