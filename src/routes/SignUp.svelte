@@ -1,5 +1,7 @@
 <script>
   import Button from "../components/Button.svelte";
+  import axios from "axios";
+  import { currentPage } from "../data-users";
   let nome = "";
   let email = "";
   let matricula = "";
@@ -7,7 +9,7 @@
   let senha = "";
   let confSenha = "";
 
-  function createUser() {
+  async function createUser() {
     if (senha != confSenha) return;
     let form = new FormData();
     form.append("nome", nome);
@@ -15,9 +17,37 @@
     form.append("matricula", matricula);
     form.append("resposta", resposta);
     form.append("senha", senha);
-    fetch("http://localhost:8000/create-user.php", {
-      method: "POST",
-      body: form,
+
+    const url = "http://localhost:8000/validation-create-user.php";
+
+    axios.get(url).then((response) => {
+      const validacaoUser = response.data;
+
+      const filtrandoMatricula = validacaoUser.map((validando) => {
+        return validando.ALU_MATRICULA;
+      });
+      const filtrandoEmail = validacaoUser.map((validando) => {
+        return validando.ALU_EMAIL;
+      });
+
+      let filtrandoMatriculaEspecifico = filtrandoMatricula.find(
+        (element) => element === matricula
+      );
+      
+      let filtrandoEmailEspecifico = filtrandoEmail.find(
+        (element) => element === email
+      );
+
+      if (filtrandoMatriculaEspecifico === matricula || filtrandoEmailEspecifico === email) {
+        alert("Matricula/Email já existente! Tente novamente.");
+      } else {
+        fetch("http://localhost:8000/create-user.php", {
+          method: "POST",
+          body: form,
+        });
+
+        $currentPage = "index";
+      }
     });
   }
 </script>
