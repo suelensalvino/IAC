@@ -70,7 +70,7 @@
 </header>
 
 <section class="absolute w-[75%] ml-[35%] mr-[10%] px-12 py-8 h-screen">
-  <div class="w-full bg-slate-700 h-full rounded-lg p-8 flex justify-center items-center ">
+  <div class="w-full bg-slate-700 h-full rounded-lg p-8 flex justify-center items-center flex-col">
     {#if $dashPages == "home"}
       <Home />
     {:else if $dashPages == "frequencia"}
