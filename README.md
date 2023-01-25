@@ -19,3 +19,6 @@ Feito com :heart: por:
 * CSS
 * JS
 * Svelte
+* Tailwindcss
+* Dayjs
+* Axios
