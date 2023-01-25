@@ -11,6 +11,7 @@ require 'main.php';
  ]);
 
 $data = $q->fetchAll(PDO::FETCH_ASSOC);
+echo json_encode($data);
 
 if (sizeof($data) == 0) {
   http_response_code(401);
@@ -20,5 +21,3 @@ if (sizeof($data) == 0) {
 $user = $data[0];
 $_SESSION['user'] = $user;
 http_response_code(200);
-
-?>

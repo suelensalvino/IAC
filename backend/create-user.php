@@ -1,13 +1,13 @@
 <?php
 require 'main.php';
 
-$nome = $_POST['nome'];
-$email = $_POST['email'];
-$matricula = $_POST['matricula'];
-$resposta = $_POST['resposta'];
-$senha = $_POST['senha'];
+$nome = $_POST['nome'] ?? null;
+$email = $_POST['email'] ?? null;
+$matricula = $_POST['matricula'] ?? null;
+$resposta = $_POST['resposta'] ?? null;
+$senha = $_POST['senha'] ?? null;
 
-try{
+try {
     $q = $pdo->prepare('INSERT INTO ALUNO VALUES (null, :nome, :email, :matricula, :resposta, :senha)');
     $q->execute([
         'nome' => $nome,
@@ -16,8 +16,6 @@ try{
         'resposta' => $resposta,
         'senha' => $senha
     ]);
-}catch(PDOException $ex){
+} catch (PDOException $ex) {
     echo 'Erro ao cadastrar usuario';
 }
-
-?>
