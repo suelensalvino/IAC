@@ -51,18 +51,8 @@
       bind:value={senha}
       required
       class="py-3 px-4 rounded bg-gray-900 text-white placeholder:text-gray-700"
-      id="password"
     />
-    <img src="src\assets\img\eye.svg" onclick="eyeClick()" id="eyesvg">
   </div>
   <Button><span slot="button-child">Entrar no sistema</span></Button>
-  <script src="senha.js"></script>
 </form>
-<style>
-#eyesvg {
-  position: absolute;
-  top: 74.7%;
-  right: 120px;
-  cursor: pointer;
-  width: 30px;
-</style>
+
