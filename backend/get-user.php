@@ -1,12 +1,13 @@
 <?php
-    include 'main.php';
+include 'main.php';
 
-    if (!isset($_SESSION['user'])) {
-        http_response_code(401);
-        exit();
-    }
+if (!isset($_SESSION['user'])) {
+    http_response_code(401);
+    exit();
+}
 
-    $stmt = $conn->query('SELECT * FROM tipo WHERE user_id = ' . $_SESSION['user']['id']);
-    $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$stmt = $conn->query('SELECT * FROM aluno');
+$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    echo json_encode($data);
+
+echo json_encode($data);
