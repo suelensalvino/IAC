@@ -8,8 +8,8 @@ $resposta = $_POST['resposta'] ?? null;
 $senha = $_POST['senha'] ?? null;
 
 try {
-    $q = $pdo->prepare('INSERT INTO ALUNO VALUES (null, :nome, :email, :matricula, :resposta, :senha)');
-    $q->execute([
+    $stmt = $conn->prepare('INSERT INTO ALUNO VALUES (null, :nome, :email, :matricula, :resposta, :senha)');
+    $stmt->execute([
         'nome' => $nome,
         'email' => $email,
         'matricula' => $matricula,
