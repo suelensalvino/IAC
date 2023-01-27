@@ -40,7 +40,9 @@
       class="w-full flex odd:bg-slate-300 even:bg-slate-400 border-b-2 border-black/50 text-center rounded-lg font-medium hover:odd:bg-slate-300/80 hover:even:bg-slate-400/80 transition-all"
     >
       <div class="w-full">{horario.TIP_DATA}</div>
-      <div class="w-full border-x-2 border-black/50">{horario.TIP_ENTRADA}</div>
+      <div class="w-full border-x-2 border-black/50">
+        {horario.TIP_ENTRADA}
+      </div>
       <div class=" w-full">{horario.TIP_SAIDA}</div>
     </div>
   {/each}

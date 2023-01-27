@@ -28,11 +28,14 @@
     form.append("data", data);
     form.append("entrada", entrada);
     form.append("saida", saida);
-    const response = await fetch("http://localhost:8000/registro-ponto.php", {
-      method: "POST",
-      body: form,
-      credentials: "include",
-    });
+    const response = await fetch(
+      "http://localhost:8000/create-registro-ponto.php",
+      {
+        method: "POST",
+        body: form,
+        credentials: "include",
+      }
+    );
 
     if (!response.ok) {
       alert("Algo deu errado");
@@ -78,5 +81,3 @@
     <Button><span slot="button-child">Inserir horário</span></Button>
   </div>
 </form>
-
-
