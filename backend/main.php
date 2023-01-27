@@ -5,9 +5,8 @@
     try {
         $dsn = 'mysql:dbname=' . 'IAC' . ';host=' . 'localhost' . ';port=' . 3306 . ';charset=utf8';
     
-        $pdo = new PDO($dsn, 'root', 'root');
-    
-        return $pdo;
+        $conn = new PDO($dsn, 'root', 'root');
+
     } catch (PDOException $e) {
         echo 'Erro ao conectar com o MySql: ' . $e->getMessage();
     }
