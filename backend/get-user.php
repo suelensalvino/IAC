@@ -6,7 +6,7 @@ if (!isset($_SESSION['user'])) {
     exit();
 }
 
-$stmt = $conn->query('SELECT * FROM aluno');
+$stmt = $conn->query('SELECT * FROM ALUNO WHERE ALU_CODIGO = ' . $_SESSION["user"]["ALU_CODIGO"]);
 $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
