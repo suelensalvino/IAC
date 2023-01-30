@@ -27,7 +27,7 @@
 >
   Frequência
 </h1>
-<div class="flex w-full flex-col">
+<div class="flex w-full flex-col overflow-y-scroll px-4">
   <div
     class="w-full flex text-center bg-slate-500 text-white font-medium text-lg border-b-2 border-black/50  rounded-lg"
   >
@@ -37,13 +37,13 @@
   </div>
   {#each horarios as horario}
     <div
-      class="w-full flex odd:bg-slate-300 even:bg-slate-400 border-b-2 border-black/50 text-center rounded-lg font-medium hover:odd:bg-slate-300/80 hover:even:bg-slate-400/80 transition-all"
+      class="w-full flex odd:bg-slate-200 even:bg-slate-300 border-b-2 border-black/50 text-center rounded-lg font-medium hover:bg-slate-300/80  transition-all"
     >
       <div class="w-full">{horario.TIP_DATA}</div>
       <div class="w-full border-x-2 border-black/50">
         {horario.TIP_ENTRADA}
       </div>
-      <div class=" w-full">{horario.TIP_SAIDA}</div>
+      <div class="w-full">{horario.TIP_SAIDA}</div>
     </div>
   {/each}
 </div>
