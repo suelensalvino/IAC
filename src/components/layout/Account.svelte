@@ -1,6 +1,7 @@
 <!-- Javascript -->
 <script>
   import { onMount } from "svelte";
+  import ChangePassword from "../modals/ChangePassword.svelte";
 
   const url = "http://localhost:8000/get-user.php";
   let user = [];
@@ -16,9 +17,7 @@
     exibirUsuario();
   });
 
-  function modal() {
-    console.log("modal");
-  }
+  let showModal = false;
 </script>
 
 <!-- HTML -->
@@ -61,8 +60,12 @@
   {/each}
   <button
     class="mt-8 bg-green-800 py-2 px-4 rounded text-white font-medium hover:bg-green-900 transition-all"
-    on:click={modal}
+    on:click={() => (showModal = true)}
   >
     Alterar senha
   </button>
 </div>
+
+{#if showModal}
+  <ChangePassword on:close={() => (showModal = false)} />
+{/if}
