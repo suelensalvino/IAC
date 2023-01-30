@@ -51,8 +51,8 @@
   <div
     class="flex flex-col justify-center items-center mx-auto w-[500px] gap-4 "
   >
-    <label class="text-slate-300 font-medium text-xl"
-      >Data de presença:
+    <label class="text-slate-300 font-medium text-xl flex flex-col w-full gap-2"
+      >Data de presença
       <input
         type="date"
         bind:value={data}
@@ -62,16 +62,17 @@
         class="p-1 bg-slate-300 rounded focus:outline-green-800 hover:bg-slate-500 transition-all text-slate-600"
       />
     </label>
-    <label class="text-slate-300 font-medium text-xl"
-      >Horário de entrada:
+    <label class="text-slate-300 font-medium text-xl flex flex-col w-full gap-2"
+      >Horário de entrada
       <input
         type="time"
         bind:value={entrada}
         class="p-1 bg-slate-300 rounded focus:outline-green-800 hover:bg-slate-500 transition-all text-slate-600"
       />
     </label>
-    <label class="text-slate-300 font-medium text-xl mb-8"
-      >Horário de saída:
+    <label
+      class="text-slate-300 font-medium text-xl flex flex-col w-full gap-2 mb-8"
+      >Horário de saída
       <input
         type="time"
         bind:value={saida}
