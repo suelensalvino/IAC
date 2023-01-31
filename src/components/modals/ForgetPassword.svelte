@@ -11,7 +11,7 @@
 
   let senha = "";
   let confSenha = "";
-  let chave = "";
+  let chave = sessionStorage.getItem("email");
   let modal;
 
   const handle_keydown = (e) => {
@@ -88,7 +88,7 @@
     class="flex flex-col p-4 justify-center items-center h-full gap-6 max-w-[250px] mx-auto"
   >
     <img src={LogoIAC} alt="Logo IAC" class="w-32 -mb-4" />
-    <input type="hidden" value={sessionStorage.getItem("email")} name={chave} />
+    <input type="hidden" bind:value={chave} />
     <label for="" class="text-black text-lg flex flex-col text-center">
       Insira sua nova senha
       <input
