@@ -40,7 +40,10 @@
     if (!response.ok) {
       alert("Algo deu errado");
       return;
+    } else{
+      alert("Adicionado com sucesso!");
     }
+
     data = "";
     entrada = "";
     saida = "";
