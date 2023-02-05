@@ -48,6 +48,7 @@
   {/each}
 </div>
 <a
-  class="mb-4 font-semibold text-1xl text-white pb-1 border-white/50"
-  href="http://localhost:8000/generate-pdf.php">Gerar PDF
+  class="mb-4 py-2 px-4 mt-4 bg-green-800 hover:bg-green-700 transition-all rounded  text-1xl text-white pb-1 border-white/50"
+  href="http://localhost:8000/generate-pdf.php"
+  >Gerar PDF
 </a>

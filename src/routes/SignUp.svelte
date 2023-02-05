@@ -38,10 +38,7 @@
         (element) => element === email
       );
 
-      if (
-        filtrandoMatriculaEspecifico === matricula ||
-        filtrandoEmailEspecifico === email
-      ) {
+      if (filtrandoMatriculaEspecifico === matricula || filtrandoEmailEspecifico === email) {
         alert("Matricula/Email já existente! Tente novamente.");
       } else {
         fetch("http://localhost:8000/create-user.php", {
