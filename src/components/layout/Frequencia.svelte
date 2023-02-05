@@ -47,3 +47,7 @@
     </div>
   {/each}
 </div>
+<a
+  class="mb-4 font-semibold text-1xl text-white pb-1 border-white/50"
+  href="http://localhost:8000/generate-pdf.php">Gerar PDF
+</a>

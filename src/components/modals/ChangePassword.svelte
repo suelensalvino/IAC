@@ -91,20 +91,22 @@
     <label for="" class="text-black text-lg flex flex-col text-center">
       Insira sua nova senha
       <input
-        type="text"
+        type="password"
         class="rounded-lg p-2 text-black ring-2 ring-green-600 focus:ring-green-900 focus:ring-2 focus:outline-none"
         minlength="8"
         maxlength="21"
+        placeholder="*************"
         bind:value={senha}
       />
     </label>
     <label for="" class="text-black text-lg flex flex-col text-center">
       Repita sua nova senha
       <input
-        type="text"
+        type="password"
         class="rounded-lg p-2 text-black ring-2 ring-green-600 focus:ring-green-900 focus:ring-2 focus:outline-none"
         minlength="8"
         maxlength="21"
+        placeholder="*************"
         bind:value={confSenha}
       />
     </label>
