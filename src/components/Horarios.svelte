@@ -2,6 +2,7 @@
   // @ts-nocheck
 
   import Button from "./Button.svelte";
+  import axios from "axios";
   let data = "";
   let entrada = "";
   let saida = "";
@@ -24,26 +25,40 @@
   correcaoData();
 
   async function cadastrar() {
-    const form = new FormData();
+    let form = new FormData();
     form.append("data", data);
     form.append("entrada", entrada);
     form.append("saida", saida);
-    const response = await fetch(
-      "http://localhost:8000/create-registro-ponto.php",
-      {
-        method: "POST",
-        body: form,
-        credentials: "include",
-      }
-    );
 
-    if (!response.ok) {
-      alert("Algo deu errado");
-      return;
-    }
-    data = "";
-    entrada = "";
-    saida = "";
+    const urlValidation =
+      "http://localhost:8000/validation-create-registro.php";
+    const urlCreate = "http://localhost:8000/create-registro-ponto.php";
+
+    axios.defaults.withCredentials = true;
+
+    axios.get(urlValidation).then((response) => {
+      const validacaoHorario = response.data;
+
+      const filtrandoHorario = validacaoHorario.map((validando) => {
+        return validando.TIP_DATA;
+      });
+      let filtrandoHorarioEspecifico = filtrandoHorario.find(
+        (element) => element === data
+      );
+
+      if (filtrandoHorarioEspecifico === data) {
+        alert("Horario já cadastrado! \n Verifique sua aba de frequência!");
+      } else {
+        fetch(urlCreate, {
+          method: "POST",
+          body: form,
+          credentials: "include",
+        });
+        data = "";
+        entrada = "";
+        saida = "";
+      }
+    });
   }
 </script>
 
@@ -60,6 +75,7 @@
         max={dataCompletaMax}
         min={dataCompletaMin}
         class="p-1 bg-slate-300 rounded focus:outline-green-800 hover:bg-slate-500 transition-all text-slate-600"
+        required
       />
     </label>
     <label class="text-slate-300 font-medium text-xl flex flex-col w-full gap-2"
@@ -68,6 +84,7 @@
         type="time"
         bind:value={entrada}
         class="p-1 bg-slate-300 rounded focus:outline-green-800 hover:bg-slate-500 transition-all text-slate-600"
+        required
       />
     </label>
     <label
@@ -77,6 +94,7 @@
         type="time"
         bind:value={saida}
         class="p-1 bg-slate-300  rounded focus:outline-green-800 hover:bg-slate-500 transition-all text-slate-600"
+        required
       />
     </label>
     <Button><span slot="button-child">Inserir horário</span></Button>
