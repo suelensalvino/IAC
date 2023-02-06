@@ -50,7 +50,7 @@
 
 <!-- HTML -->
 <form
-  class="flex flex-col gap-2 w-[500px] mt-8"
+  class="flex flex-col gap-2 min-[650px]:w-[500px] mt-8 min-[320px]:w-[300px]"
   on:submit|preventDefault={emailVerify}
 >
   <div class="flex flex-col w-full gap-1">

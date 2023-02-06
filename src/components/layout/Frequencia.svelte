@@ -23,7 +23,7 @@
 <!-- HTML -->
 
 <h1
-  class="mb-4 font-semibold text-2xl text-white border-b-2 pb-1 border-white/20"
+  class="mb-4 min-[320px]:mt-4 min-[769px]:mt-0 font-semibold text-2xl text-white border-b-2 pb-1 border-white/20"
 >
   Frequência
 </h1>
@@ -37,7 +37,7 @@
   </div>
   {#each horarios as horario}
     <div
-      class="w-full flex odd:bg-slate-200 even:bg-slate-300 border-b-2 border-black/50 text-center rounded-lg font-medium hover:bg-slate-300/80  transition-all"
+      class="w-full flex items-center odd:bg-slate-200 even:bg-slate-300 border-b-2 border-black/50 text-center rounded-lg font-medium hover:bg-slate-300/80  transition-all"
     >
       <div class="w-full">{horario.TIP_DATA}</div>
       <div class="w-full border-x-2 border-black/50">

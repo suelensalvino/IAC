@@ -64,7 +64,7 @@
 
 <form on:submit|preventDefault={cadastrar} class="flex flex-col gap-4">
   <div
-    class="flex flex-col justify-center items-center mx-auto w-[500px] gap-4 "
+    class="flex flex-col justify-center items-center mx-auto min-[769px]:w-[500px] min-[320px]:w-full gap-4 "
   >
     <label class="text-slate-300 font-medium text-xl flex flex-col w-full gap-2"
       >Data de presença

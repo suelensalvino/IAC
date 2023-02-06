@@ -38,7 +38,10 @@
         (element) => element === email
       );
 
-      if (filtrandoMatriculaEspecifico === matricula || filtrandoEmailEspecifico === email) {
+      if (
+        filtrandoMatriculaEspecifico === matricula ||
+        filtrandoEmailEspecifico === email
+      ) {
         alert("Matricula/Email já existente! Tente novamente.");
       } else {
         fetch("http://localhost:8000/create-user.php", {
@@ -53,7 +56,7 @@
 </script>
 
 <form
-  class="flex flex-col gap-2 mx-w-[500px] mt-6"
+  class="flex flex-col gap-2 min-[650px]:w-[500px] mt-6 min-[320px]:w-[300px]"
   on:submit|preventDefault={createUser}
 >
   <div class="flex flex-col w-full gap-1">
@@ -64,7 +67,7 @@
       placeholder="Seu nome"
       required
       bind:value={nome}
-      class="py-3 px-4 rounded bg-gray-900 text-white placeholder:text-gray-700"
+      class="min-[650px]:py-2 min-[650px]:px-4 rounded bg-gray-900 text-white placeholder:text-gray-700 min-[320px]:py-2 min-[320px]:px-4 transition-all"
     />
   </div>
   <div class="flex flex-col w-full gap-1">
@@ -77,7 +80,7 @@
       placeholder="aluno@ifpe.edu.br.com"
       required
       bind:value={email}
-      class="py-3 px-4 rounded bg-gray-900 text-white placeholder:text-gray-700"
+      class="min-[650px]:py-2 min-[650px]:px-4 rounded bg-gray-900 text-white placeholder:text-gray-700 min-[320px]:py-2 min-[320px]:px-4 transition-all"
     />
   </div>
   <div class="flex flex-col w-full gap-1">
@@ -89,7 +92,7 @@
       placeholder="0000TSIIG0000"
       required
       bind:value={matricula}
-      class="py-3 px-4 rounded bg-gray-900 text-white placeholder:text-gray-700"
+      class="min-[650px]:py-2 min-[650px]:px-4 rounded bg-gray-900 text-white placeholder:text-gray-700 min-[320px]:py-2 min-[320px]:px-4 transition-all"
     />
   </div>
   <div class="flex flex-col w-full gap-1">
@@ -102,7 +105,7 @@
       placeholder="Nome do animal"
       required
       bind:value={resposta}
-      class="py-3 px-4 rounded bg-gray-900 text-white placeholder:text-gray-700"
+      class="min-[650px]:py-2 min-[650px]:px-4 rounded bg-gray-900 text-white placeholder:text-gray-700 min-[320px]:py-2 min-[320px]:px-4 transition-all"
     />
   </div>
   <div class="flex flex-col w-full gap-1">
@@ -115,7 +118,7 @@
       placeholder="*************"
       required
       bind:value={senha}
-      class="py-3 px-4 rounded bg-gray-900 text-white placeholder:text-gray-700"
+      class="min-[650px]:py-2 min-[650px]:px-4 rounded bg-gray-900 text-white placeholder:text-gray-700 min-[320px]:py-2 min-[320px]:px-4 transition-all"
     />
   </div>
   <div class="flex flex-col w-full gap-1">
@@ -128,11 +131,15 @@
       placeholder="*************"
       required
       bind:value={confSenha}
-      class="py-3 px-4 mb-2 rounded bg-gray-900 text-white placeholder:text-gray-700"
+      class="min-[650px]:py-2 min-[650px]:px-4 mb-2 rounded bg-gray-900 text-white placeholder:text-gray-700 min-[320px]:py-2 min-[320px]:px-4 transition-all"
     />
   </div>
   {#if senha != "" && senha != confSenha}
-    <div class="danger">Senhas não conferem</div>
+    <div
+      class="fixed bottom-1 right-1 bg-red-500 py-2 px-2 text-white font-semibold w-24 text-center"
+    >
+      Senhas não conferem
+    </div>
   {/if}
   <Button><span slot="button-child">Cadastre-se no sistema</span></Button>
 </form>

@@ -47,7 +47,7 @@
   async function alterarSenha() {
     if (senha != confSenha) return;
     let form = new FormData();
-    
+
     form.append("senha", senha);
 
     const url = "http://localhost:8000/update-password-user.php";
@@ -78,7 +78,7 @@
 />
 
 <div
-  class="absolute left-1/2 top-1/2 w-[100vw - 4em] max-w-lg m-h-[100vh - 4em] h-[600px] w-[500px] overflow-auto transform-cpu rounded-lg -translate-x-1/2 -translate-y-1/2 p-1 bg-white"
+  class="absolute left-1/2 top-1/2 w-[100vw - 4em] max-w-lg m-h-[100vh - 4em] h-[75vh] min-[650px]:w-[500px] min-[320px]:w-[300px] min-[500px]:w-[450px] overflow-auto transform-cpu rounded-lg -translate-x-1/2 -translate-y-1/2 p-1 bg-white"
   role="dialog"
   aria-modal="true"
   bind:this={modal}
@@ -88,7 +88,7 @@
     class="flex flex-col p-4 justify-center items-center h-full gap-6 max-w-[250px] mx-auto"
   >
     <img src={LogoIAC} alt="Logo IAC" class="w-32 -mb-4" />
-    <label for="" class="text-black text-lg flex flex-col text-center">
+    <label class="text-black text-lg flex flex-col text-center">
       Insira sua nova senha
       <input
         type="password"
@@ -99,7 +99,7 @@
         bind:value={senha}
       />
     </label>
-    <label for="" class="text-black text-lg flex flex-col text-center">
+    <label class="text-black text-lg flex flex-col text-center">
       Repita sua nova senha
       <input
         type="password"
@@ -111,14 +111,13 @@
       />
     </label>
     {#if senha != "" && senha != confSenha}
-      <div class="danger">Senhas não conferem</div>
+      <div class="fixed bottom-1 right-1 bg-red-500 py-2 px-2 text-white font-semibold w-24 text-center">Senhas não conferem</div>
     {/if}
     <Button><span slot="button-child">Alterar senha</span></Button>
   </form>
   <!-- svelte-ignore a11y-click-events-have-key-events -->
   <span
     class="absolute top-1 right-1 mr-2 mt-2 cursor-pointer bg-green-700 hover:bg-green-900 transition-all"
-    id="fechar"
     on:click={close}
     ><img
       src="https://icongr.am/material/close.svg?size=32&color=ffffff"

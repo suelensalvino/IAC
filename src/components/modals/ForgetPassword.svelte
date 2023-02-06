@@ -78,14 +78,14 @@
 />
 
 <div
-  class="absolute left-1/2 top-1/2 w-[100vw - 4em] max-w-lg m-h-[100vh - 4em] h-[600px] w-[500px] overflow-auto transform-cpu rounded-lg -translate-x-1/2 -translate-y-1/2 p-1 bg-white"
+  class="absolute left-1/2 top-1/2 w-[100vw - 4em] max-w-lg m-h-[100vh - 4em] h-[75vh] min-[650px]:w-[500px] min-[320px]:w-[300px] min-[500px]:w-[450px] overflow-auto transform-cpu rounded-lg -translate-x-1/2 -translate-y-1/2 p-1 bg-white"
   role="dialog"
   aria-modal="true"
   bind:this={modal}
 >
   <form
     on:submit|preventDefault={alterarSenha}
-    class="flex flex-col p-4 justify-center items-center h-full gap-6 max-w-[250px] mx-auto"
+    class="flex flex-col items-center mt-8 mb-12 border-b-2 border-slate-600 w-[90%] pb-4"
   >
     <img src={LogoIAC} alt="Logo IAC" class="w-32 -mb-4" />
     <input type="hidden" bind:value={chave} />
@@ -112,7 +112,11 @@
       />
     </label>
     {#if senha != "" && senha != confSenha}
-      <div class="danger">Senhas não conferem</div>
+      <div
+        class="fixed bottom-1 right-1 bg-red-500 py-2 px-2 text-white font-semibold w-24 text-center"
+      >
+        Senhas não conferem
+      </div>
     {/if}
     <Button><span slot="button-child">Alterar senha</span></Button>
   </form>
