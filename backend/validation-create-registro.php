@@ -6,7 +6,7 @@ if (!isset($_SESSION['user'])) {
     exit();
 }
 
-$stmt = $conn->query("SELECT TIP_DATA FROM tipo WHERE TIP_DATA != 'null' AND ALUNO_ALU_CODIGO = " . $_SESSION["user"]["ALU_CODIGO"]);
+$stmt = $conn->query("SELECT TIP_DATA FROM TIPO WHERE TIP_DATA != 'null' AND ALUNO_ALU_CODIGO = " . $_SESSION["user"]["ALU_CODIGO"]);
 $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 echo json_encode($data);
