@@ -85,7 +85,7 @@
 >
   <form
     on:submit|preventDefault={alterarSenha}
-    class="flex flex-col items-center mt-8 mb-12 border-b-2 border-slate-600 w-[90%] pb-4"
+    class="flex flex-col p-4 justify-center items-center h-full gap-6 max-w-[250px] mx-auto"
   >
     <img src={LogoIAC} alt="Logo IAC" class="w-32 -mb-4" />
     <input type="hidden" bind:value={chave} />
