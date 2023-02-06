@@ -57,6 +57,8 @@
         data = "";
         entrada = "";
         saida = "";
+
+        alert("Adicionado com sucesso!");
       }
     });
   }
