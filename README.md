@@ -15,10 +15,30 @@ Feito com :heart: por:
 * [Thayally Andrade](https://github.com/ThayallyAn)
 
 ## Tecnologias
-* PHP
-* CSS
-* JS
-* Svelte
-* Tailwindcss
-* Dayjs
-* Axios
+### Front-end
+  * HTML5
+  * CSS3
+  * Tailwind CSS
+  * Svelte
+### Back-end
+  *  PHP
+  *  Axios
+  *  DayJS
+
+## Rodando o projeto
+  ### Requisitos mínimos
+    Node.JS 16^
+    PHP 8^
+    Visual Studio Code || Qualquer outro editor de código
+  ### Primeiramente
+#### Clonar o repositório:
+      https://github.com/BernardoFOFG/IAC
+#### Acessar a pasta com:
+      cd IAC/
+#### Rodar o seguinte comando, é necessário ter o node instalado na maquina:
+      npm install
+#### Verifique seu navegador na porta
+      localhost:8000
+#### E pronto, o projeto rodará normalmente na sua maquina!
+    
+
